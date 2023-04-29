@@ -76,4 +76,18 @@ li {
   font-family: "Poppins", sans-serif;
   color: #7a7a7a;
 }
+@media (max-width: 850px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 30px;
+    padding-top: 120px;
+    text-align: center;
+  }
+  .contacts, .main-info, .fond, .logo{
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dbd8d8;
+  }
+}
 </style>

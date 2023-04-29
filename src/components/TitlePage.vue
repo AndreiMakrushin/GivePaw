@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+import { useAnimalStore } from '../stores/animalStore';
+const animals = useAnimalStore()
+const opennModal = () =>{
+    animals.openModal = true
+}
+
+</script>
 <template>
   <div>
     <div class="title-container">
@@ -9,7 +16,7 @@
             <h3>Бездомным животным</h3></span
           >
           <p>Помогаем бездомным животным обрести любящую семью.</p>
-          <a href="">Связаться с нами</a>
+          <a @click="opennModal">Связаться с нами</a>
         </div>
 
         <div class="image">
@@ -37,7 +44,7 @@
   display: flex;
   justify-content: space-between;
 }
-h3{
+h3 {
   color: white;
 }
 .title-text {

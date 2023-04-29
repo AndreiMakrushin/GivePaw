@@ -98,4 +98,9 @@
 img {
   margin-top: 30px;
 }
+@media (max-width: 950px) {
+  .cards-services {
+  flex-direction: column;
+}
+}
 </style>

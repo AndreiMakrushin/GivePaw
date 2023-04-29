@@ -48,6 +48,13 @@ const router = useRouter();
 .content {
   max-width: 460px;
 }
+.image{
+  display: flex;
+  max-width: 500px;
+}
+img{
+  width: 100%;
+}
 .header-content span {
   font-size: 50px;
   line-height: 60px;
@@ -84,5 +91,11 @@ a:hover {
   background-image: -webkit-linear-gradient(0deg, #fff 0%, #fff 99%);
   color: #ed5b0d;
   transition: 0.3s;
+}
+@media (max-width: 850px){
+  .container{
+    display: flex;
+  flex-direction: column;
+  }
 }
 </style>

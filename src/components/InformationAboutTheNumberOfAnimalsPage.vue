@@ -136,4 +136,19 @@ a:hover {
   display: block;
   margin-bottom: 0;
 }
+@media (max-width: 850px){
+  .container{
+    display: flex;
+  flex-direction: column;
+  }
+  .adapt-card {
+  flex-direction: column;
+}
+.single-card span {
+  max-width: 400px;
+}
+.single-card{
+  width: 100%;
+}
+}
 </style>

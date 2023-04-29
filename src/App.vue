@@ -1,14 +1,19 @@
 <script setup>
-import {  RouterView } from 'vue-router'
-import HeaderPage from './components/HeaderPage.vue';
-import FooterPage from './components/FooterPage.vue';
+import { RouterView } from "vue-router";
+import { useAnimalStore } from './stores/animalStore';
+import HeaderPage from "./components/HeaderPage.vue";
+import FooterPage from "./components/FooterPage.vue";
+import ModalPage from './components/ModalPage.vue';
+
+const animals = useAnimalStore()
 </script>
 
 <template>
   <div>
-    <HeaderPage/>
+    <ModalPage v-if="animals.openModal"/>
+    <HeaderPage />
     <RouterView />
-    <FooterPage/>
+    <FooterPage />
   </div>
 </template>
 <style scoped>
