@@ -4,6 +4,7 @@
   import InformationAboutTheNumberOfAnimalsPage from '../components/InformationAboutTheNumberOfAnimalsPage.vue';
   import AboutUsPage from '../components/AboutUsPage.vue';
   import BannerAboutUs from '../components/BannerAboutUs.vue'
+  
 </script>
 <template>
   <div>

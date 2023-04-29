@@ -37,6 +37,9 @@
   display: flex;
   justify-content: space-between;
 }
+h3{
+  color: white;
+}
 .title-text {
   max-width: 450px;
   color: #ffffff;
