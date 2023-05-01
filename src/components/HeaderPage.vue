@@ -1,5 +1,8 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import { ref } from "vue";
+
+const burgerVisible = ref(false);
 </script>
 <template>
   <main>
@@ -8,7 +11,17 @@ import { RouterLink } from "vue-router";
         <div class="logo">
           <img src="../images/logo.png" alt="" />
         </div>
-        <div class="menu">
+        <div class="burger" @click="burgerVisible = true">
+          <img src="../images/menu.png" alt="" />
+        </div>
+        <div
+          class="menu"
+          :class="burgerVisible === true ? 'active-menu' : ''"
+          @click="burgerVisible = false"
+        >
+          <div class="burger" @click="burgerVisible = false">
+            <img src="../images/close.png" alt="" />
+          </div>
           <ui>
             <li>
               <RouterLink active-class="active" class="text" to="/"
@@ -42,16 +55,6 @@ import { RouterLink } from "vue-router";
   </main>
 </template>
 <style scoped>
-.text {
-  text-decoration: none;
-  transition: 0.3s;
-  color: #102955;
-  padding: 10px;
-}
-.text:hover {
-  color: #fd7e14;
-  transition: 0.3s;
-}
 .main {
   display: flex;
   justify-content: center;
@@ -62,6 +65,28 @@ import { RouterLink } from "vue-router";
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.burger {
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+}
+.burger img {
+  width: 100%;
+}
+.text {
+  text-decoration: none;
+  transition: 0.3s;
+  color: #102955;
+  padding: 10px;
+}
+.text:hover {
+  color: #fd7e14;
+  transition: 0.3s;
+}
+.active {
+  color: #fd7e14;
 }
 ui {
   display: flex;
@@ -74,7 +99,38 @@ li {
   font-weight: 500;
   cursor: pointer;
 }
-.active {
-  color: #fd7e14;
+@media (max-width: 750px) {
+  .menu {
+    position: absolute;
+    margin-top: -100%;
+  }
+  .active-menu {
+    transition: 0.3s;
+    margin-top: 150%;
+    position: absolute;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    z-index: 9;
+  }
+  .active-menu ui {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .active-menu li {
+    margin: 5px;
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 750px) {
+  .burger {
+    display: none;
+  }
 }
 </style>

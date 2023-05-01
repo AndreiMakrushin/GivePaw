@@ -3,7 +3,6 @@
     <div class="main-container">
       <div class="container">
         <slot name="banneraboutus"></slot>
-        
       </div>
     </div>
   </div>

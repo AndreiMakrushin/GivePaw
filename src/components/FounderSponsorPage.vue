@@ -60,4 +60,10 @@ img {
   margin-bottom: 0;
   line-height: 35px;
 }
+@media (max-width: 700px) {
+  .container {
+    margin: 5px;
+    flex-direction: column;
+  }
+}
 </style>

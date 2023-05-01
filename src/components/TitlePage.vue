@@ -68,7 +68,7 @@ h3 {
 .image {
   left: 40%;
   position: absolute;
-  z-index: 9;
+  z-index: 3;
 }
 img {
   width: 100%;
@@ -131,8 +131,6 @@ a:hover {
 }
 @media (max-width: 700px) {
   .title {
-    display: flex;
-    flex-direction: column;
     justify-content: center;
   }
 
@@ -148,6 +146,9 @@ a:hover {
     line-height: 20px;
     font-size: 15px;
     padding-bottom: 30px;
+  }
+  .image{
+    display: none;
   }
 }
 </style>

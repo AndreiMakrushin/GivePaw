@@ -100,7 +100,7 @@ img {
 }
 @media (max-width: 950px) {
   .cards-services {
-  flex-direction: column;
-}
+    flex-direction: column;
+  }
 }
 </style>

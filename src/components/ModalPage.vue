@@ -22,7 +22,6 @@ const closeModal = () =>{
                 <input type="text" placeholder="Введите тему">
             </div>
         </div>
-        <button @click="closeModal">Отмена</button>
         <button @click="closeModal">Отправить</button>
       </div>
     </div>

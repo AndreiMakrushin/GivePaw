@@ -85,7 +85,10 @@ li {
     padding-top: 120px;
     text-align: center;
   }
-  .contacts, .main-info, .fond, .logo{
+  .contacts,
+  .main-info,
+  .fond,
+  .logo {
     margin-bottom: 20px;
     border-bottom: 1px solid #dbd8d8;
   }

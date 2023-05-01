@@ -8,15 +8,14 @@ body::-webkit-scrollbar {
     width: 0px;               /* ширина scrollbar */
   }
   body::-webkit-scrollbar-track {
-    background: none
-    ;        /* цвет дорожки */
+    background: transparent;        /* цвет дорожки */
   }
   body::-webkit-scrollbar-thumb {
-    background-color: rgb(253, 114, 0);    /* цвет плашки */
+    background-color: transparent;    /* цвет плашки */
     border-radius: 20px;     /* padding вокруг плашки */
   }
   .title-services h3 {
-    width: 600px;
+    max-width: 600px;
     margin: 0 auto;
     margin-bottom: 10px;
     font-size: 50px;
@@ -25,7 +24,7 @@ body::-webkit-scrollbar {
     color: #191d34;
   }
   .title-services p {
-    width: 700px;
+    max-width: 700px;
     margin: 0 auto;
     font-size: 23px;
     line-height: 30px;

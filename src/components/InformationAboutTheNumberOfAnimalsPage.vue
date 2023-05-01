@@ -59,7 +59,7 @@
   justify-content: space-between;
 }
 .content {
-  width: 450px;
+  max-width: 450px;
 }
 .content h3 {
   font-size: 50px;
@@ -142,10 +142,11 @@ a:hover {
   flex-direction: column;
   }
   .adapt-card {
+    display: flex;
   flex-direction: column;
 }
 .single-card span {
-  max-width: 400px;
+  max-width: 100%;
 }
 .single-card{
   width: 100%;

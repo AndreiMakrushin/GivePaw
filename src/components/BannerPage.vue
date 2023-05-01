@@ -31,7 +31,6 @@
   background-repeat: no-repeat;
 }
 .banner {
- 
   max-width: 730px;
   text-align: center;
 }

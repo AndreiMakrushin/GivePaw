@@ -38,6 +38,7 @@ const router = useRouter();
   justify-content: center;
 }
 .container {
+  margin: 15px;
   width: 1140px;
   display: flex;
   flex-direction: row;
@@ -48,11 +49,11 @@ const router = useRouter();
 .content {
   max-width: 460px;
 }
-.image{
+.image {
   display: flex;
   max-width: 500px;
 }
-img{
+img {
   width: 100%;
 }
 .header-content span {
@@ -92,10 +93,10 @@ a:hover {
   color: #ed5b0d;
   transition: 0.3s;
 }
-@media (max-width: 850px){
-  .container{
+@media (max-width: 850px) {
+  .container {
     display: flex;
-  flex-direction: column;
+    flex-direction: column;
   }
 }
 </style>
