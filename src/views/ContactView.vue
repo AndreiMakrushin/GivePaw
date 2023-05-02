@@ -1,18 +1,25 @@
+<script setup>
+import BannerAboutUs from "../components/BannerAboutUs.vue";
+import ContactsPage from "../components/ContactsPage.vue";
+</script>
 <template>
-    <div>
-        <div class="contact-container">
-            <div class="container">
-                <h1>В разработке!</h1>
-            </div>
+  <div>
+    <BannerAboutUs>
+      <template #banneraboutus>
+        <div>
+          <h3>Контакты</h3>
         </div>
-    </div>
+      </template>
+    </BannerAboutUs>
+    <ContactsPage/>
+  </div>
 </template>
 <style scoped>
-    .contact-container{
-        display: flex;
-        justify-content: center;
-    }
-    h1{
-        font-size: 60px;
-    }
+h3{
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 0;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+}
 </style>

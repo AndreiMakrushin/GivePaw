@@ -8,7 +8,7 @@ import BannerAboutUs from "../components/BannerAboutUs.vue";
     <BannerAboutUs>
         <template #banneraboutus>
             <div>
-                <h3>Волонтеры</h3>
+                <h3 class="title-volunteers">Волонтеры</h3>
             </div>
         </template>
     </BannerAboutUs>
@@ -43,4 +43,8 @@ import BannerAboutUs from "../components/BannerAboutUs.vue";
     <BannerPage />
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+.title-volunteers{
+  color: white;
+}
+</style>

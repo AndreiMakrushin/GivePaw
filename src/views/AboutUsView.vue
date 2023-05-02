@@ -22,6 +22,8 @@
   </div>
 </template>
 
-<style>
-
+<style scoped>
+  h3{
+    color: white;
+  }
 </style>

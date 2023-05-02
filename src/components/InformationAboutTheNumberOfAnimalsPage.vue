@@ -150,6 +150,8 @@ a:hover {
 }
 .single-card{
   width: 100%;
+  margin: 0;
+  margin-top: 20px;
 }
 }
 </style>
