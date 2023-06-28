@@ -32,7 +32,7 @@ const opennModal = () =>{
   justify-content: center;
   align-items: center;
   display: flex;
-  background-image: url("../images/banner.png");
+  background-image: url(../images/ert.png);
   background-position: center center;
   background-size: cover;
   padding-top: 100px;

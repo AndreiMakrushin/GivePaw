@@ -5,7 +5,7 @@
         <h3>Контакты</h3>
         <ui>
           <li>+7 922 474 09 23</li>
-          <li><a href="#">Diana_Kh@gmail.com</a></li>
+          <li><a href="#">@gmail.com</a></li>
           <li>Россия, Тюмень, 50 лет Октября</li>
         </ui>
       </div>

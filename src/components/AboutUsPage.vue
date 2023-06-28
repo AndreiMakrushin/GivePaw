@@ -7,7 +7,7 @@ const router = useRouter();
     <div class="main-container">
       <div class="container">
         <div class="image">
-          <img src="../images/pet_care.png" alt="" />
+          <img src="https://www.baypay.com/img/about/pet_care.png" alt="" />
         </div>
         <div class="content">
           <div class="header-content">

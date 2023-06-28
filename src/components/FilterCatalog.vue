@@ -1,33 +1,24 @@
 <script setup>
 import { ref, watch} from "vue";
-import Dropdown from "primevue/dropdown";
 import { useAnimalStore } from "../stores/animalStore";
+import Dropdown from "primevue/dropdown";
+
 const props = defineProps(["result"]);
-const animal = useAnimalStore()
+const animal = useAnimalStore();
 
-
-
-const animalFilter = props.result.map((animal) => {
-  return animal.attributes;
-});
-
+const animalFilter = ref(props.result.map((animal) => animal.attributes));
 
 const type = ref("");
 const gender = ref("");
 const breed = ref("");
- 
-watch(type, () => {
-  animal.typeAnimal = type.value.type;
-});
-watch(gender, () => {
-  animal.genderAnimal = gender.value.gender;
-});
-watch(breed, () => {
-  animal.breedAnimal = breed.value.breed;
-});
 
-console.log(animalFilter);
+watch(type, () => (animal.typeAnimal = type.value.type));
+watch(gender, () => (animal.genderAnimal = gender.value.gender));
+watch(breed, () => (animal.breedAnimal = breed.value.breed));
+
+
 </script>
+
 <template>
   <h1>Фильтрация</h1>
   <div class="card flex justify-content-center">
