@@ -1,15 +1,18 @@
+
+import "primevue/resources/primevue.min.css";
+import "primevue/resources/themes/lara-light-indigo/theme.css"; 
+
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import Antd from "ant-design-vue"
+import PrimeVue from 'primevue/config';
 
 import App from './App.vue'
 import router from './router'
-import "ant-design-vue/dist/antd.css"
 import './assets/base.css'
 const app = createApp(App)
 
 app.use(createPinia())
-app.use(Antd)
-app.use(router)
+app.use(PrimeVue);
+app.use(router);
 
 app.mount('#app')
