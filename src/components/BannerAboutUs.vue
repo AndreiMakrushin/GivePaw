@@ -12,7 +12,7 @@
   justify-content: center;
   align-items: center;
   display: flex;
-  background-image: url("../images/bradcam.png");
+  background-image: url("../imagess/bradcam.png");
   background-position: center center;
   background-size: cover;
   padding-top: 150px;

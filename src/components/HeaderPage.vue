@@ -9,10 +9,10 @@ const burgerVisible = ref(false);
     <div class="main">
       <div class="header">
         <div class="logo">
-          <img src="../images/logo.png" alt="" />
+          <img src="../imagess/logo.png" alt="" />
         </div>
         <div class="burger" @click="burgerVisible = true">
-          <img src="../images/menu.png" alt="" />
+          <img src="../imagess/menu.png" alt="" />
         </div>
         <div
           class="menu"
@@ -20,7 +20,7 @@ const burgerVisible = ref(false);
           @click="burgerVisible = false"
         >
           <div class="burger" @click="burgerVisible = false">
-            <img src="../images/close.png" alt="" />
+            <img src="../imagess/close.png" alt="" />
           </div>
           <ui>
             <li>

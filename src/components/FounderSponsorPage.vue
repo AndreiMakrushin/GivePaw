@@ -2,7 +2,7 @@
   <div>
     <div class="main-container">
       <div class="container">
-        <img src="../images/1.png" alt="" />
+        <img src="../imagess/1.png" alt="" />
 
         <div class="text-content">
           <h3>имя Фамилия</h3>

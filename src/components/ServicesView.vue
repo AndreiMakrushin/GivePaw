@@ -1,4 +1,8 @@
-<script></script>
+
+<script setup>
+
+
+</script>
 <template>
   <div>
     <div class="services-container">
@@ -11,7 +15,7 @@
             <div class="single-card">
               <div class="img-card">
                 <div class="icon">
-                  <img src="../images/service_icon_1.png" alt="" />
+                  <img src="../imagess/service_icon_1.png" alt="" />
                 </div>
               </div>
               <div class="card-text-content">
@@ -23,7 +27,7 @@
             <div class="single-card">
               <div class="img-card">
                 <div class="icon">
-                  <img src="../images/service_icon_2.png" alt="" />
+                  <img src="../imagess/service_icon_2.png" alt="" />
                 </div>
               </div>
               <div class="card-text-content">
@@ -35,7 +39,7 @@
             <div class="single-card">
               <div class="img-card">
                 <div class="icon">
-                  <img src="../images/service_icon_3.png" alt="" />
+                  <img src="../imagess/service_icon_3.png" alt="" />
                 </div>
               </div>
               <div class="card-text-content">
@@ -93,7 +97,7 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin: auto;
-  background-image: url("../images/service_icon_bg_1.png");
+  background-image: url("../imagess/service_icon_bg_1.png");
 }
 img {
   margin-top: 30px;

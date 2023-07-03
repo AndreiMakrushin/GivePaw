@@ -20,7 +20,7 @@ const opennModal = () =>{
         </div>
 
         <div class="image">
-          <img src="../images/dog.png" alt="" />
+          <img src="../imagess/dog.png"/>
         </div>
       </div>
     </div>
@@ -32,7 +32,7 @@ const opennModal = () =>{
   justify-content: center;
   align-items: center;
   display: flex;
-  background-image: url(../images/ert.png);
+  background-image: url(../imagess/banner.png);
   background-position: center center;
   background-size: cover;
   padding-top: 100px;

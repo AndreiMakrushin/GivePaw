@@ -18,7 +18,7 @@
           <div class="adapt-card">
             <div class="single-card">
               <div class="logo">
-                <img src="../images/1.1.png" alt="" />
+                <img src="../imagess/1.1.png" alt="" />
               </div>
               <h1>81</h1>
               <span>Сейчас в приюте</span>
@@ -26,14 +26,14 @@
             <div class="double-card">
               <div class="single-card">
                 <div class="logo">
-                  <img src="../images/3.png" alt="" />
+                  <img src="../imagess/3.png" alt="" />
                 </div>
                 <h1>200+</h1>
                 <span>Собак нашли новый дом</span>
               </div>
               <div class="single-card">
                 <div class="logo">
-                  <img src="../images/2.png" alt="" />
+                  <img src="../imagess/2.png" alt="" />
                 </div>
                 <h1>50+</h1>
                 <span>Кошек нашли новый дом</span>

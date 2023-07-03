@@ -25,7 +25,7 @@
         </ui>
       </div>
       <div class="logo">
-        <img src="../images/logo.png" alt="" />
+        <img src="../imagess/logo.png" alt="" />
         <ui>
           <li>Россия, Тюмень</li>
         </ui>
