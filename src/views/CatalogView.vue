@@ -18,7 +18,7 @@ onMounted(() => {
     <div class="content-container">
       <div class="container">
         <div class="filter-component">
-          <FilterCatalogVue v-if="result !== null" :result="result" />
+          <FilterCatalogVue v-if="result !== null" :result="result"/>
         </div>
 
         <div class="catalog-component">
@@ -30,18 +30,16 @@ onMounted(() => {
 </template>
 <style scoped>
 .content-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.filter-component{
+  max-height: 400px;
 }
 .container{
+  width: 100%;
   display: flex;
-  flex-direction: row;
-}
-.catalog-component {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
 }
 h1 {
   font-size: 60px;

@@ -1,5 +1,10 @@
 <script setup>
+import { ref } from "vue";
 const props = defineProps(["animals"]);
+const count = ref(2)
+const tet = ref(props.animals.test.slice(0, count.value));
+
+console.log(console.log(tet.value));
 </script>
 <template>
   <div>
@@ -44,5 +49,9 @@ img {
   padding: 10px;
   border-radius: 20px;
   box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.2);
+}
+.container {
+  display: flex;
+  flex-direction: row;
 }
 </style>
