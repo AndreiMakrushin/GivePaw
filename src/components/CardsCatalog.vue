@@ -1,38 +1,59 @@
 <script setup>
-import { ref } from "vue";
+ import gsap from "gsap"
 const props = defineProps(["animals"]);
-const count = ref(2)
-const tet = ref(props.animals.test.slice(0, count.value));
-
-console.log(console.log(tet.value));
+const afterEnter = (el)=>{
+  }
+  const beforeEnter = (el) =>{
+    el.style.opacity = 0;
+    el.style.transform = "translateY(-50px)";
+  }
+  const enter = (el) =>{
+    gsap.to(el, {
+      y: 0,
+      opacity: 1,
+      duration: 0.9,
+      delay: el.dataset.index * 0.3
+    })
+    
+  }
 </script>
 <template>
   <div>
     <div class="container">
-      <div
-        class="one-card-container"
-        v-for="oneAnimal in props.animals.test"
-        :key="oneAnimal.id"
+      <transition-group
+        name="fade"
+        appear
+        @after-enter="afterEnter"
+        @before-enter="beforeEnter"
+        @enter="enter"
       >
-        <div class="card">
-          <div class="image">
-            <img
-              :src="`http://localhost:1337${oneAnimal.attributes.img.data[0].attributes.url}`"
-            />
-          </div>
-          <div class="content">
-            <h1 class="desc">{{ oneAnimal.attributes.name }}</h1>
-            <h4 class="desc">Порода: {{ oneAnimal.attributes.breed }}</h4>
-            <span class="desc">Размер: {{ oneAnimal.attributes.size }}</span>
-            <h4 class="desc">Пол: {{ oneAnimal.attributes.gender }}</h4>
-            <h2 class="desc">{{ oneAnimal.attributes.region }}</h2>
+        <div
+          class="one-card-container"
+          v-for="(oneAnimal, index) in props.animals.test"
+          :key="oneAnimal.id"
+          :data-index="index"
+        >
+          <div class="card">
+            <div class="image">
+              <img
+                :src="`http://localhost:1337${oneAnimal.attributes.img.data[0].attributes.url}`"
+              />
+            </div>
+            <div class="content">
+              <h1 class="desc">{{ oneAnimal.attributes.name }}</h1>
+              <h4 class="desc">Порода: {{ oneAnimal.attributes.breed }}</h4>
+              <span class="desc">Размер: {{ oneAnimal.attributes.size }}</span>
+              <h4 class="desc">Пол: {{ oneAnimal.attributes.gender }}</h4>
+              <h2 class="desc">{{ oneAnimal.attributes.region }}</h2>
+            </div>
           </div>
         </div>
-      </div>
+      </transition-group>
     </div>
   </div>
 </template>
 <style scoped>
+
 .image {
   max-width: 350px;
 }

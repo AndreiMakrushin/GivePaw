@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { computed, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import axios from "axios";
 
 export const useAnimalStore = defineStore("animals", () => {
@@ -7,7 +7,7 @@ export const useAnimalStore = defineStore("animals", () => {
   const typeAnimal = ref("");
   const genderAnimal = ref("");
   const breedAnimal = ref("");
-  const store = ref([])
+  const store = ref([]);
 
   const getAnimals = async () => {
     const response = await axios.get(
@@ -15,11 +15,14 @@ export const useAnimalStore = defineStore("animals", () => {
     );
     store.value = response.data;
   };
-  getAnimals();
+
+  onMounted(() => {
+    getAnimals();
+  });
 
   const test = computed(() => {
     if (Array.isArray(store.value.data)) {
-      return store.value.data.filter(animal => {
+      return store.value.data.filter((animal) => {
         return (
           animal.attributes.type.includes(typeAnimal.value) &&
           animal.attributes.gender.includes(genderAnimal.value) &&
@@ -33,12 +36,14 @@ export const useAnimalStore = defineStore("animals", () => {
 
   const setAnimals = () => {};
   return {
+    getAnimals,
     test,
     setAnimals,
     openModal,
     typeAnimal,
     genderAnimal,
     breedAnimal,
+    store,
   };
 });
 
