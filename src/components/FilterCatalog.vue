@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref, watch } from "vue";
+import { computed, onMounted, ref, watch } from "vue";
 import { useAnimalStore } from "../stores/animalStore";
 import Dropdown from "primevue/dropdown";
 import { storeToRefs } from "pinia";
@@ -7,75 +7,82 @@ import { storeToRefs } from "pinia";
 const animals = useAnimalStore();
 const animal = storeToRefs(animals);
 
-const animalFilter = ref([]);
-const animalType = ref([]);
-const animalGender = ref([]);
 const animalBreed = ref([]);
+const arrGAnderType = ref([]);
 
 onMounted(async () => {
   await animals.getAnimals();
+  arrGAnderType.value = animal.store.value.data.reduce((acc, animal) => {
+    const typeObj = { type: animal.attributes.type };
+    const genderObj = { gender: animal.attributes.gender };
 
-  animalType.value = Array.from(
-    new Set(animal.store.value.data.map((animal) => animal.attributes.type))
-  ).map((type) => ({ type }));
-  animalGender.value = Array.from(
-    new Set(animal.store.value.data.map((animal) => animal.attributes.gender))
-  ).map((gender) => ({ gender }));
+    if (!acc.some((obj) => obj.type === typeObj.type)) {
+      acc.push(typeObj);
+    }
+    if (!acc.some((obj) => obj.gender === genderObj.gender)) {
+      acc.push(genderObj);
+    }
+
+    return acc;
+  }, []);
 });
 
-const type = ref("");
-const gender = ref("");
-const breed = ref("");
-
-watch(type, () => {
-  animalFilter.value = animal.store.value.data.filter(
-    (animal) => animal.attributes.type === type.value.type
+const filteredGenderType = computed(() => {
+  return arrGAnderType.value.filter((item) =>
+    Object.values(item).some((value) => value !== "" && value !== undefined)
   );
-  animalBreed.value = animalFilter.value
-    .map((animal) => animal.attributes.breed)
-    .map((breed) => ({ breed }));
 });
 
-watch(type, () => (animals.typeAnimal = type.value.type));
-watch(gender, () => (animals.genderAnimal = gender.value.gender));
-watch(breed, () => (animals.breedAnimal = breed.value.breed));
+watch(animal.typeAnimal, () => {
+  animalBreed.value = animal.store.value.data.reduce((acc, animals) => {
+    if (animals.attributes.type === animal.typeAnimal.value) {
+      acc.push({ breed: animals.attributes.breed });
+    }
+    return acc;
+  }, []);
+});
 </script>
 
 <template>
-  <h1>Фильтрация</h1>
-  <div class="card flex justify-content-center" v-if="animal.test">
-    <div class="p-float-label">
-      <Dropdown
-        v-model="type"
-        inputId="dd-city"
-        :options="animalType"
-        optionLabel="type"
-        placeholder="Выберите питомца"
-        class="w-full md:w-14rem"
-      />
-      <label for="dd-city">Выберите питомца</label>
-    </div>
-    <div class="p-float-label">
-      <Dropdown
-        v-model="gender"
-        inputId="dd-city"
-        :options="animalGender"
-        optionLabel="gender"
-        placeholder="Выберите пол"
-        class="w-full md:w-14rem"
-      />
-      <label for="dd-city">Выберите пол</label>
-    </div>
-    <div class="p-float-label" v-if="type">
-      <Dropdown
-        v-model="breed"
-        inputId="dd-city"
-        :options="animalBreed"
-        optionLabel="breed"
-        placeholder="Выберите породу"
-        class="w-full md:w-14rem"
-      />
-      <label for="dd-city">Выберите породу</label>
+  <div>
+    <h1>Фильтрация</h1>
+    <div class="card flex justify-content-center" v-if="animal.test">
+      <div class="p-float-label">
+        <Dropdown
+          v-model="animal.typeAnimal.value"
+          inputId="dd-city"
+          :options="filteredGenderType"
+          optionLabel="type"
+          optionValue="type"
+          placeholder="Выберите питомца"
+          class="w-full md:w-14rem"
+        />
+        <label for="dd-city">Выберите питомца</label>
+      </div>
+      <div class="p-float-label">
+        <Dropdown
+          v-model="animal.genderAnimal.value"
+          inputId="dd-city"
+          :options="filteredGenderType"
+          optionLabel="gender"
+          optionValue="gender"
+          placeholder="Выберите пол"
+          class="w-full md:w-14rem"
+        />
+        <label for="dd-city">Выберите пол</label>
+      </div>
+      <div class="p-float-label" v-if="animal.typeAnimal">
+        <Dropdown
+          v-model="animal.breedAnimal.value"
+          inputId="dd-city"
+          :options="animalBreed"
+          optionLabel="breed"
+          optionValue="breed"
+          placeholder="Выберите породу"
+          class="w-full md:w-14rem"
+        />
+        <label for="dd-city">Выберите породу</label>
+      </div>
     </div>
   </div>
 </template>
@@ -88,5 +95,8 @@ watch(breed, () => (animals.breedAnimal = breed.value.breed));
 }
 label {
   margin-left: 16px;
+}
+h1 {
+  text-align: center;
 }
 </style>
